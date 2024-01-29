@@ -65,4 +65,60 @@ function sayHelloJS() {
   console.log(this); //global
 }
 
-sayHelloJS();
+// sayHelloJS();
+
+//example of this
+
+/*
+This:
+1.Function invocation = this is the window object
+2.method are defined as normal functions: this points to the current 
+//object
+method defined using arrow function: this point to window
+Arrow function borrow the this from its lexical scope 
+*/
+
+//this
+function sayHello() {
+  const child = () => {
+    console.log(this); //window object
+  };
+  child();
+}
+
+// sayHello();
+//this for functions/arrow function in the global
+// scope is window object
+//arrow function solves the problem of this
+//shorter syntax
+const sayHi = () => {
+  console.log("hello world");
+};
+
+// sayHi();
+
+// const obj = {
+//   a: 1,
+//   b: 2,
+//   fn: function () {
+//     console.log(this);
+//   },
+//   fn2: () => {
+//     console.log(this);
+//   },
+// };
+
+// obj.fn();
+// obj.fn2();
+
+const obj1 = {
+  a: 1,
+  b: 2,
+  fn: function () {
+    const fn2 = () => {
+      console.log(this);
+    };
+    fn2();
+  },
+};
+obj1.fn();

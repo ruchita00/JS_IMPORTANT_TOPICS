@@ -1,22 +1,3 @@
-//this
-function sayHello() {
-  function child() {
-    console.log(this); //window object
-  }
-  child();
-}
-
-sayHello();
-//this for functions/arrow function in the global
-// scope is window object
-//arrow function solves the problem of this
-//shorter syntax
-const sayHi = () => {
-  console.log("hello world");
-};
-
-sayHi();
-
 //Functional Programming
 //oops programming is not fast
 //think of your program in modular functions
