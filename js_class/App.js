@@ -58,3 +58,11 @@ x();
 let fn = function () {
   console.log("I am a function expression");
 };
+
+//this
+
+function sayHelloJS() {
+  console.log(this); //global
+}
+
+sayHelloJS();
